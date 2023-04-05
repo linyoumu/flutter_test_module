@@ -18,12 +18,28 @@ class $AssetImagesGen {
   /// File path: asset/images/avatar.jpg
   AssetGenImage get avatar => const AssetGenImage('asset/images/avatar.jpg');
 
+  /// File path: asset/images/clock.png
+  AssetGenImage get clock => const AssetGenImage('asset/images/clock.png');
+
+  /// File path: asset/images/close.png
+  AssetGenImage get close => const AssetGenImage('asset/images/close.png');
+
   /// File path: asset/images/default_photo.jpg
   AssetGenImage get defaultPhoto =>
       const AssetGenImage('asset/images/default_photo.jpg');
 
   /// File path: asset/images/edit.png
   AssetGenImage get edit => const AssetGenImage('asset/images/edit.png');
+
+  /// File path: asset/images/flash_off.png
+  AssetGenImage get flashOff =>
+      const AssetGenImage('asset/images/flash_off.png');
+
+  /// File path: asset/images/flash_on.png
+  AssetGenImage get flashOn => const AssetGenImage('asset/images/flash_on.png');
+
+  /// File path: asset/images/gallery.png
+  AssetGenImage get gallery => const AssetGenImage('asset/images/gallery.png');
 
   /// File path: asset/images/img.png
   AssetGenImage get img => const AssetGenImage('asset/images/img.png');
@@ -37,9 +53,26 @@ class $AssetImagesGen {
   /// File path: asset/images/play.png
   AssetGenImage get play => const AssetGenImage('asset/images/play.png');
 
+  /// File path: asset/images/rotate.png
+  AssetGenImage get rotate => const AssetGenImage('asset/images/rotate.png');
+
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [add, avatar, defaultPhoto, edit, img, img1, lock, play];
+  List<AssetGenImage> get values => [
+        add,
+        avatar,
+        clock,
+        close,
+        defaultPhoto,
+        edit,
+        flashOff,
+        flashOn,
+        gallery,
+        img,
+        img1,
+        lock,
+        play,
+        rotate
+      ];
 }
 
 class $AssetVideosGen {

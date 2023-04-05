@@ -38,6 +38,7 @@ dependencies:
   flutter_gen_runner: ^5.2.0
   image_picker: ^0.8.7+1
   get: ^4.6.5
+  camera: ^0.10.3+2
 
 dev_dependencies:
   flutter_test:

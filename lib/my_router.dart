@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test_module/main.dart';
+import 'package:flutter_test_module/page/camera_page/camera_page.dart';
 import 'package:flutter_test_module/page/friend_page.dart';
 import 'package:flutter_test_module/page/message_page.dart';
 import 'package:flutter_test_module/page/mine_page/mine_page.dart';
@@ -14,6 +15,7 @@ class MyRouter extends RouterDelegate<List<RouteSettings>>
   static const String mainPage = '/main';
   static const String friendPage = '/friend';
   static const String minePage = '/mine';
+  static const String cameraPage = '/camera';
   static const String messagePage = '/message';
   static const String photoPicker = '/photo_picker';
   static const String playerPage = '/player';
@@ -119,6 +121,9 @@ class MyRouter extends RouterDelegate<List<RouteSettings>>
         break;
       case playerPage:
         page = PlayerPage(routeSettings.arguments?.toString() ?? '');
+        break;
+      case cameraPage:
+        page = const CameraPage();
         break;
       default:
         page = const Scaffold();
