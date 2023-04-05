@@ -2,17 +2,19 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test_module/main.dart';
+import 'package:flutter_test_module/page/friend_page.dart';
+import 'package:flutter_test_module/page/message_page.dart';
 import 'package:flutter_test_module/page/mine_page/mine_page.dart';
-import 'package:flutter_test_module/second_page.dart';
 import 'package:flutter_test_module/page/player_page/player_page.dart';
 import 'package:flutter_test_module/widget/photo_picker.dart';
 import 'gen/assets.gen.dart';
 
 class MyRouter extends RouterDelegate<List<RouteSettings>>
     with ChangeNotifier, PopNavigatorRouterDelegateMixin<List<RouteSettings>> {
-  // static const String mainPage = '/main';
+  static const String mainPage = '/main';
+  static const String friendPage = '/friend';
   static const String minePage = '/mine';
-  // static const String secondPage = '/second';
+  static const String messagePage = '/message';
   static const String photoPicker = '/photo_picker';
   static const String playerPage = '/player';
   static const String videoListPage = 'video_list';
@@ -92,9 +94,12 @@ class MyRouter extends RouterDelegate<List<RouteSettings>>
     var args = routeSettings.arguments;
 
     switch(routeSettings.name) {
-      // case mainPage:
-      //   page = const MyHomePage(title: 'My Home Page');
-      //   break;
+      case mainPage:
+        page = const MyHomePage(title: 'My Home Page');
+        break;
+      case friendPage:
+        page = FriendPage(params: routeSettings.arguments?.toString() ?? '');
+        break;
       case minePage:
         page = const MinePage();
         break;
@@ -102,24 +107,19 @@ class MyRouter extends RouterDelegate<List<RouteSettings>>
         String? url;
         String height = '';
         String width = '';
-
         if (args is Map<String, String>) {
           url = args[MyRouter.key_url];
           height = args[MyRouter.key_height] ?? height;
           width = args[MyRouter.key_width] ?? width;
         }
-
         page = PhotoPickerPage(url ?? Assets.images.defaultPhoto.keyName);
         break;
-      // case secondPage:
-      //   page = SecondPage(params: routeSettings.arguments?.toString() ?? '');
-      //   break;
+      case messagePage:
+        page = MessagePage(params: routeSettings.arguments?.toString() ?? '');
+        break;
       case playerPage:
         page = PlayerPage(routeSettings.arguments?.toString() ?? '');
         break;
-      // case videoListPage:
-      //   page = VideoList();
-      //   break;
       default:
         page = const Scaffold();
     }

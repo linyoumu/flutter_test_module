@@ -47,7 +47,7 @@ class _VideoListState extends State<VideoList> {
                                   Player()
                                     ..setLoop(0)
                                     ..setCommonDataSource(widget.controller.dataList![index].url,
-                                        type: SourceType.net, autoPlay: true),
+                                        type: SourceType.net, autoPlay: false),
                                   fit: FijkFit.cover)),
                           Padding(
                             padding: const EdgeInsets.only(bottom: 10, left: 15),

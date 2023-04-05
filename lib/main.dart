@@ -121,3 +121,42 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
 }
+
+/*
+  // 1、创建一个Chanel实例，传入通道名称，名称需要和Native侧完全一致
+  // static const _channel = BasicMessageChannel('methodChannel', StringCodec());
+  // static const _channel = EventChannel('methodChannel');
+  static const _channel = MethodChannel('methodChannel');
+
+  Future<void> _sendMessage() async {
+  String? message = await _channel.send('hello from dart');
+    print('send message: $message');
+  }
+
+  Future<void> getFlutterInfo() async {
+    // BasicMessageChannel
+    // _channel.setMessageHandler((message) async {
+    //   print('receive message: $message');
+    //   setState(() {
+    //     _message = message;
+    //   });
+    //   return 'ACK from dart';
+    // });
+
+    // EventChannel
+    // _channel.receiveBroadcastStream().listen((event) {
+    //   print('Receive event: $event');
+    //   setState(() {
+    //     _message = event;
+    //   });
+    // }, onError: (error) {
+    //   print('Recevie error: $error');
+    // }, cancelOnError: true);
+
+    //MethodChannel
+    final Map<String, dynamic> map = {'name': 'flutter', 'version': '3.0.1', 'language': 'dart', 'android_api': 31};
+    String result = await _channel.invokeMethod('getFlutterInfo', map);
+    print('Method invoke result: $result');
+    print('map is : ${map['name']}');
+  }
+* */
