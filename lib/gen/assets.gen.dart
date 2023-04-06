@@ -75,27 +75,10 @@ class $AssetImagesGen {
       ];
 }
 
-class $AssetVideosGen {
-  const $AssetVideosGen();
-
-  /// File path: asset/videos/test.flv
-  String get test => 'asset/videos/test.flv';
-
-  /// File path: asset/videos/video1.mp4
-  String get video1 => 'asset/videos/video1.mp4';
-
-  /// File path: asset/videos/video2.mp4
-  String get video2 => 'asset/videos/video2.mp4';
-
-  /// List of all assets
-  List<String> get values => [test, video1, video2];
-}
-
 class Assets {
   Assets._();
 
   static const $AssetImagesGen images = $AssetImagesGen();
-  static const $AssetVideosGen videos = $AssetVideosGen();
 }
 
 class AssetGenImage {
