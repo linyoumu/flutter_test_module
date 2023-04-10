@@ -33,7 +33,7 @@ class _VideoViewState extends State<VideoView> {
   }
 
   void onTapVideo() {
-    print('MOOC onTapVideo');
+    print('FlutterModule onTapVideo');
     if (widget.player.state == FijkState.paused) {
       widget.player.start();
     } else {

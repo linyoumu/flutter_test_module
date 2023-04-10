@@ -16,13 +16,13 @@ String sdcardPath = '/storage/emulated/0/Android/data/com.example.flutter_test_m
 
 init() {
   // 初始化页面路由，获取Native传递的参数，放入路由表
-  print('MOOC- init route is : ${window.defaultRouteName}');
+  print('FlutterModule- init route is : ${window.defaultRouteName}');
   router.push(name: window.defaultRouteName);
 
   getExternalStorageDirectory().then((value) {
     sdcardPath = value?.path ?? sdcardPath;
     Player.setCachePath(sdcardPath);
-    print('MOOC - sdcard path: $sdcardPath');
+    print('FlutterModule - sdcard path: $sdcardPath');
   });
 }
 
@@ -67,12 +67,12 @@ class _MyHomePageState extends State<MyHomePage> {
     //   _counter++;
     // });
 
-    print('MOOC Start second page');
+    print('FlutterModule Start second page');
     var ack = await router.push(name: MyRouter.minePage, arguments: 'Hello from mainPage');
-    print('MOOC Ack: $ack');
+    print('FlutterModule Ack: $ack');
 
     // var name = sp.getString('name');
-    // print('MOOC- sp-name : $name');
+    // print('FlutterModule- sp-name : $name');
   }
 
   @override
@@ -113,8 +113,8 @@ class _MyHomePageState extends State<MyHomePage> {
   Future<void> getFlutterInfo() async {
     final Map<String, dynamic> map = {'name': 'flutter', 'version': '3.0.1', 'language': 'dart', 'android_api': 31};
     // String result = await _channel.invokeMethod('getFlutterInfo', map);
-    // print('MOOC'MOOC'Method invoke result: $result');
-    // print('MOOC'MOOC'map is : ${map['name']}');
+    // print('FlutterModule'FlutterModule'Method invoke result: $result');
+    // print('FlutterModule'FlutterModule'map is : ${map['name']}');
 
     sp = await SharedPreferences.getInstance();
     sp.setString('name', map['name']);

@@ -22,7 +22,7 @@ class Player extends FijkPlayer {
     if (File(videoPath).existsSync()) {
       // 如果二级缓存存在，直接用本地保存的视频文件播放
       path = videoPath;
-      print('MOOC- play cache video: $path');
+      print('FlutterModule- play cache video: $path');
     } else if (enableCache) {
       // 走三级缓存，并添加到二级缓存——本地磁盘中
       // 设置播放器缓存的步骤：
@@ -30,9 +30,9 @@ class Player extends FijkPlayer {
       path = '$cache_switch$path';
       // 2、通过setOption设置cache_file_path
       setOption(FijkOption.formatCategory, 'cache_file_path', videoPath);
-      print('MOOC- play http with cache: $cache_switch$path');
+      print('FlutterModule- play http with cache: $cache_switch$path');
     } else {
-      print('MOOC- play http: $path');
+      print('FlutterModule- play http: $path');
     }
     super.setDataSource(path, autoPlay: autoPlay, showCover: showCover);
   }
@@ -53,7 +53,7 @@ class Player extends FijkPlayer {
     Uri uri = Uri.parse(url);
     String name = uri.pathSegments.last;
     var path = '$cachePath/$name';
-    print('MOOC- get video Path: $path');
+    print('FlutterModule- get video Path: $path');
 
     return path;
   }

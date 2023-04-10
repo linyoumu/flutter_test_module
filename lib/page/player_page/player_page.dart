@@ -27,7 +27,7 @@ class _PlayerPageState extends State<PlayerPage> {
   @override
   Widget build(BuildContext context) {
     player = Player();
-    print('MOOC video url is :${widget.url}');
+    print('FlutterModule video url is :${widget.url}');
     player.setCommonDataSource(widget.url, type: SourceType.net, autoPlay: true);
     return Scaffold(
       body: FavoriteGesture(
@@ -70,20 +70,20 @@ class _PlayerPageState extends State<PlayerPage> {
   _saveVideo(String url) async {
     Uri uri = Uri.parse(url);
     String name = uri.pathSegments.last;
-    print('MOOC save video: $url');
+    print('FlutterModule save video: $url');
 
     var dir = await getExternalStorageDirectory();
 
     String savePath = "${dir?.path}/$name";
 
-    print('MOOC savePath: $savePath');
+    print('FlutterModule savePath: $savePath');
 
     // 开启下载，将url下载到的视频保存到savePath当中
     var result = await Dio().download(url, savePath, onReceiveProgress: (count, total) {
       var progress = '${(count / total * 100).toInt()}%';
-      print('MOOC progress: $progress');
+      print('FlutterModule progress: $progress');
     });
-    print('MOOC result: $result');
+    print('FlutterModule result: $result');
   }
 
   @override

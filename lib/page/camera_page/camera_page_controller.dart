@@ -36,7 +36,7 @@ class CameraPageController extends GetxController {
   void init() {
     // 1、等待camera初始化
     availableCameras().then((value) {
-      print('MOOC: available camera : $value');
+      print('FlutterModule: available camera : $value');
       _cameras = value;
       _initCameraController();
     });
@@ -50,22 +50,22 @@ class CameraPageController extends GetxController {
   }
 
   void _initCameraController() {
-    print('MOOC: _initCameraController, cameraIndex: $cameraIndex');
+    print('FlutterModule: _initCameraController, cameraIndex: $cameraIndex');
     // 2、选择具体camera来创建camera controller
     _cameraController = CameraController(_cameras[cameraIndex], ResolutionPreset.max);
     // 3、等待cameraController初始化
     _cameraController?.initialize().then((_) {
-      print('MOOC: _initCameraController, refresh controller: $cameraIndex');
+      print('FlutterModule: _initCameraController, refresh controller: $cameraIndex');
 
       _cameraControllerObs.value = _cameraController;
     }).catchError((Object e) {
       if (e is CameraException) {
         switch (e.code) {
           case 'CameraAccessDenied':
-            print('MOOC: User denied camera access.');
+            print('FlutterModule: User denied camera access.');
             break;
           default:
-            print('MOOC: Handle other errors.');
+            print('FlutterModule: Handle other errors.');
             break;
         }
       }
@@ -77,7 +77,7 @@ class CameraPageController extends GetxController {
     if (recording) {
       recording = false;
       XFile? file = await _cameraController?.stopVideoRecording();
-      print('MOOC: take video : ${file?.path}');
+      print('FlutterModule: take video : ${file?.path}');
     } else {
       recording = true;
       _cameraController?.startVideoRecording();
