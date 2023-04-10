@@ -1,11 +1,3 @@
-# flutter_test_module
-
-A new Flutter project.
-
-## Getting Started
-
-For help getting started with Flutter development, view the online
-[documentation](https://flutter.dev/).
-
-For instructions integrating Flutter modules to your existing applications,
-see the [add-to-app documentation](https://flutter.dev/docs/development/add-to-app).
+1、实现短视频个人中心的页面
+2、实现视频播放功能插件
+3、实现视频拍摄页面功能
